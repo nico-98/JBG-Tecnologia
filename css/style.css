@@ -125,6 +125,13 @@ button {
 }
 
 @media screen and (max-width: 500px) {
+    form{
+        max-width:400px;
+    }
+    
+    .form-imput{ width: 300px;
+    }
+
     .text-welcome {
         width: 300px;
         font-size: 1em;
