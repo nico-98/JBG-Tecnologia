@@ -102,29 +102,39 @@ button {
     font-size: 16px;
 }
 
-.footer-img {
-    width: 100%;
-    height: 180px;
-    border-radius: 10px;
-    position: absolute;
-    z-index: -1;
-    margin-top: 20px;
+footer {
+    padding: 20px; /* Espaciado alrededor del contenido */
+    display: flex; /* Utilizar flexbox */
+    justify-content: center; /* Centrar contenido horizontalmente */
+    align-items: center; /* Centrar contenido verticalmente */
+    flex-wrap: wrap;
 }
 
-/*estilo de links de footer*/
+.footer-container {
+    display: flex;
+    gap: 20px;
+}
+
 .footer-link {
-    text-decoration: none;
-    margin: 10px;
+    display: contents;
+    align-items: center;
 }
 
 .footer-icon {
     width: 40px;
-    border-radius: 10px;
-    margin: 30px;
-    z-index: 1;
+    height: 40px;
+    margin: 10px;
+    border-radius: 5px;
 }
 
+@media screen and (max-width: 990px) {
+    .navbar-nav .nav-link:hover {
+        transform: none;
+    }
+    
+}
 @media screen and (max-width: 500px) {
+    
     form{
         max-width:400px;
     }
