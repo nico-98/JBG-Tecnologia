@@ -55,6 +55,8 @@ body {
     margin: auto;
 }
 
+/*estilo de form*/
+
 input textarea {
     width: 90%;
     box-sizing: border-box;
@@ -101,12 +103,12 @@ button {
     cursor: pointer;
     font-size: 16px;
 }
-
+/*estilo de foooter*/
 footer {
-    padding: 20px; /* Espaciado alrededor del contenido */
-    display: flex; /* Utilizar flexbox */
-    justify-content: center; /* Centrar contenido horizontalmente */
-    align-items: center; /* Centrar contenido verticalmente */
+    padding: 20px; 
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
     flex-wrap: wrap;
 }
 
