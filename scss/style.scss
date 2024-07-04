@@ -1,0 +1,183 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #141035;
+}
+
+.logo {
+    margin: auto;
+    width: 150px;
+    height: auto;
+}
+
+// Posicionamiento del nav
+.navbar{    
+    position: sticky;
+    top:0px;
+}
+
+// Cambiar el fondo y el tamaño de los enlaces de navegación en hover
+.navbar-nav {
+    .nav-link {
+        &:hover {
+            background-color: #20E5F6;
+            transform: scale(1.1);
+        }
+    }
+}
+
+// Cambiar el fondo de los elementos del dropdown en hover
+.dropdown-item {
+    &:hover {
+        background-color: #20E5F6;
+    }
+}
+
+// Estilo de imagen de bienvenida
+.image-welcome {
+    margin: auto;
+    width: 37rem;
+    height: auto;
+}
+
+.welcome {
+    text-align: center;
+    margin: auto; 
+    color: #ffffff;
+}
+
+.title-welcome {
+    font-family: "Anta", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-shadow: 0px 0px 5px #20E5F6;
+    margin: 15px;
+}
+
+.text-welcome {
+    font-size: 1.5em;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 80vh;
+    margin: auto;
+}
+
+//Estilo de boton flotante de whatsapp
+.link-wsp-conteiner{
+    position: fixed;
+    margin: 20px;
+    right: 0;
+    bottom: 0;
+    .link-wsp{
+        width: 40px;
+        border-radius: 17px;
+        box-shadow: 0px 0px 10px #686666;
+    }
+}
+
+// Estilo de form
+input, textarea {
+    width: 90%;
+    box-sizing: border-box;
+    border: none;
+    border-top: 3px solid #20e5f6;
+    margin: 10px;
+    border-radius: 8px;
+}
+
+form {
+    background-color: #141035;
+    padding: 20px 0;
+    max-width: 60%;
+    font-size: 20px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px #20E5F6;
+}
+
+textarea {
+    min-width: 90%;
+    resize: vertical;
+    min-height: 100px;
+    max-height: 200px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-imput {
+    padding: 6px 20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background: #272727;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+// Estilo de footer
+footer {
+    padding: 20px; 
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    flex-wrap: wrap;
+}
+
+.footer-container {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-link {
+    display: contents;
+    align-items: center;
+}
+
+.footer-icon {
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 990px) {
+    .navbar-nav {
+        .nav-link {
+            &:hover {
+                transform: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    form {
+        max-width: 400px;
+    }
+
+    .form-imput {
+        width: 300px;
+    }
+
+    .text-welcome {
+        width: 300px;
+        font-size: 1em;
+    }
+
+    .image-welcome {
+        width: 300px;
+    }
+}
