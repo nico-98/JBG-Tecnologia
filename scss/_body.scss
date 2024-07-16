@@ -1,0 +1,79 @@
+/*Estilo del body,nav*/
+body {
+    background-color: #141035;
+}
+
+.logo {
+    margin: auto;
+    width: 150px;
+    height: auto;
+}
+
+// Posicionamiento del nav
+.navbar{    
+    position: sticky;
+    top:0px;
+}
+
+// Cambiar el fondo y el tamaño de los enlaces de navegación en hover
+.navbar-nav {
+    .nav-link {
+        &:hover {
+            background-color: #20E5F6;
+            transform: scale(1.1);
+        }
+    }
+}
+
+// Cambiar el fondo de los elementos del dropdown en hover
+.dropdown-item {
+    &:hover {
+        background-color: #20E5F6;
+    }
+}
+
+// Estilo de imagen de bienvenida
+.image-welcome {
+    margin: auto;
+    width: 37rem;
+    height: auto;
+}
+
+.welcome {
+    text-align: center;
+    margin: auto; 
+    color: #ffffff;
+}
+
+.title-welcome {
+    font-family: "Anta", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-shadow: 0px 0px 5px #20E5F6;
+    margin: 15px;
+}
+
+.text-welcome {
+    font-size: 1.5em;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 80vh;
+    margin: auto;
+}
+
+//Estilo de boton flotante de whatsapp
+.link-wsp-conteiner {
+    position: fixed;
+    margin: 20px;
+    right: 0;
+    bottom: 0;
+    .link-wsp{
+        width: 40px;
+        border-radius: 20px;
+        box-shadow: 0px 0px 10px #686666;
+        &:hover{
+            transform: scale(1.1);
+            box-shadow: 0px 0px 20px #686666;
+        }    
+    }
+}

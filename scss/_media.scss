@@ -1,0 +1,29 @@
+/*Mediaqueris*/
+@media screen and (max-width: 990px) {
+    .navbar-nav {
+        .nav-link {
+            &:hover {
+                transform: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    form {
+        max-width: 400px;
+    }
+
+    .form-imput {
+        width: 300px;
+    }
+
+    .text-welcome {
+        width: 300px;
+        font-size: 1em;
+    }
+
+    .image-welcome {
+        width: 300px;
+    }
+}

@@ -1,0 +1,25 @@
+// Estilo de footer
+footer {
+    padding: 20px; 
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    flex-wrap: wrap;
+}
+
+.footer-container {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-link {
+    display: contents;
+    align-items: center;
+}
+
+.footer-icon {
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+    border-radius: 5px;
+}

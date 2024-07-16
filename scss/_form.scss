@@ -1,0 +1,42 @@
+/*Estilo de form y boton*/
+form {
+    background-color: #141035;
+    padding: 20px 0;
+    max-width: 60%;
+    font-size: 20px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px #20e5f6;
+
+    .form-input {
+    padding: 6px 20px;
+    }
+
+    .button-container {
+    @include flex-center;
+    margin-top: 10px;
+
+    button {
+        padding: 10px 20px;
+        border: none;
+        background: #272727;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;    
+        }
+    }
+
+    textarea {
+    min-width: 90%;
+    resize: vertical;
+    min-height: 100px;
+    max-height: 200px;
+    font-family: Arial, Helvetica, sans-serif;
+    }
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
