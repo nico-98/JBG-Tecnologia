@@ -10,8 +10,9 @@ function actualizarCarrito() {
   const modalCarrito = document.querySelector('.modal-carrito');
   const contenido = carrito.length
     ? carrito.map((producto, index) =>
-        `<li>${producto} <button class="btn-eliminar" data-index="${index}">❌</button></li>`
-      ).join('')
+        `<li>${producto.nombre} - $${producto.precio} 
+        <button class="btn-eliminar" data-index="${index}">❌</button></li>`
+      ).join('') 
     : '<p>El carrito está vacío.</p>';
 
   modalCarrito.innerHTML = `
@@ -20,13 +21,9 @@ function actualizarCarrito() {
     ${carrito.length ? '<button id="vaciar-carrito">Vaciar Carrito</button>' : ''}
   `;
 
-  // Agregar eventos a los botones para eliminar productos
-  const botonesEliminar = document.querySelectorAll('.btn-eliminar');
-  botonesEliminar.forEach(boton => {
-    boton.addEventListener('click', (e) => {
-      const index = e.target.dataset.index;
-      eliminarProducto(index);
-    });
+  // Conectar eventos de eliminar y vaciar carrito
+  document.querySelectorAll('.btn-eliminar').forEach(boton => {
+    boton.addEventListener('click', (e) => eliminarProducto(e.target.dataset.index));
   });
 
   const btnVaciar = document.getElementById('vaciar-carrito');
@@ -35,20 +32,14 @@ function actualizarCarrito() {
   }
 }
 
-// Evento para mostrar el carrito
-carritoContainer.addEventListener('click', () => {
-  const modalCarrito = document.querySelector('.modal-carrito');
-  modalCarrito.classList.toggle('visible');
-});
-
 // Función para agregar productos al carrito
-function agregarAlCarrito(producto) {
-  carrito.push(producto);
-  historialCarrito.push(producto); // Guardar en el historial
+function agregarAlCarrito(idProducto, nombreProducto, precioProducto) {
+  carrito.push({ id: idProducto, nombre: nombreProducto, precio: precioProducto });
+  historialCarrito.push({ id: idProducto, nombre: nombreProducto, precio: precioProducto });
   Swal.fire({
     title: "¡Producto añadido!",
-    text: `${producto} se añadió al carrito.`,
-    icon: "success"
+    text: `${nombreProducto} fue agregado al carrito.`,
+    icon: "success",
   });
   actualizarCarrito();
 }
@@ -66,7 +57,7 @@ function eliminarProducto(index) {
 
   swalWithBootstrapButtons.fire({
     title: "¿Estás seguro?",
-    text: `¿Quieres eliminar ${productoEliminado} del carrito?`,
+    text: `¿Quieres eliminar ${productoEliminado.nombre} del carrito?`,
     icon: "warning",
     showCancelButton: true,
     confirmButtonText: "Sí, eliminarlo",
@@ -77,16 +68,10 @@ function eliminarProducto(index) {
       carrito.splice(index, 1);
       Swal.fire({
         title: "¡Eliminado!",
-        text: `${productoEliminado} fue eliminado del carrito.`,
+        text: `${productoEliminado.nombre} fue eliminado del carrito.`,
         icon: "success"
       });
       actualizarCarrito();
-    } else if (result.dismiss === Swal.DismissReason.cancel) {
-      Swal.fire({
-        title: "Cancelado",
-        text: `${productoEliminado} permanece en el carrito.`,
-        icon: "error"
-      });
     }
   });
 }
@@ -114,45 +99,65 @@ function vaciarCarrito() {
   });
 }
 
-// Conectar los botones de productos con el carrito
-document.addEventListener('DOMContentLoaded', () => {
-  // Crear modal para el carrito
-  const modalHTML = document.createElement('div');
-  modalHTML.className = 'modal-carrito';
-  modalHTML.style.cssText = `
-    position: fixed;
-    bottom: 80px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #fff;
-    color: #141035;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-    max-width: 300px;
-    display: none;
-    z-index: 1000;
-  `;
-  document.body.appendChild(modalHTML);
+// Evento para mostrar/ocultar el carrito
+carritoContainer.addEventListener('click', () => {
+  const modalCarrito = document.querySelector('.modal-carrito');
+  
+  if (!modalCarrito) {
+    console.error("Modal del carrito no encontrado.");
+    return;
+  }
 
-  actualizarCarrito();
+  // Alternar visibilidad del modal
+  modalCarrito.style.display = modalCarrito.style.display === 'none' || !modalCarrito.style.display
+    ? 'block'
+    : 'none';
+});
 
-  // Conectar botones de productos
-  const botonesAgregar = document.querySelectorAll('.boton-agregar'); // Clase que asignaremos a botones
-  botonesAgregar.forEach(boton => {
-    boton.addEventListener('click', () => {
-      const producto = boton.dataset.producto; // Usamos data-producto en HTML
-      agregarAlCarrito(producto);
-    });
+// Crear modal para el carrito
+const modalHTML = document.createElement('div');
+modalHTML.className = 'modal-carrito';
+modalHTML.style.cssText = `
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  color: #141035;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  max-width: 300px;
+  display: none;
+  z-index: 1000;
+`;
+document.body.appendChild(modalHTML);
+
+// Conectar botones de productos
+const botonesAgregar = document.querySelectorAll('.agregar-carrito');
+botonesAgregar.forEach(boton => {
+  boton.addEventListener('click', () => {
+    const idProducto = boton.dataset.id;
+    const nombreProducto = boton.parentElement.querySelector('.card-title').textContent;
+    const precioProducto = boton.dataset.precio;
+    agregarAlCarrito(idProducto, nombreProducto, precioProducto);
   });
 });
+
+// Conectar botón del carrito
+carritoContainer.addEventListener('click', () => {
+  const modalCarrito = document.querySelector('.modal-carrito');
+  modalCarrito.classList.toggle('visible');
+});
+
+actualizarCarrito();
 
 // Función para mostrar el historial de productos
 function mostrarHistorial() {
   if (historialCarrito.length) {
     Swal.fire({
       title: "Historial de Productos",
-      html: historialCarrito.map(producto => `<p>${producto}</p>`).join(''),
+      html: historialCarrito.map(producto => `<p>${producto.nombre} - $${producto.precio}</p>`).join(''),
       icon: "info"
     });
   } else {
