@@ -1,23 +1,37 @@
 [
     {
     "id": 4,
-    "nombre": "SAMSUNG GALAXY S23",
-    "descripcion": "8 GB RAM, Cámara 50 MP, Pantalla Dynamic AMOLED",
-    "precio": 300000,
-    "imagen": "../img/samsung-galaxy-s23.webp"
+    "nombre": "SAMSUNG GALAXY A54",
+    "descripcion": "Memoria RAM: 8 GB, Almacenamiento: 256 GB, Pantalla: 6.5, Tipo De Pantalla: AMOLED, Procesador: Exynos, Sistema Operativo: Android",
+    "precio": 120000,
+    "imagen": "../img/SAMSUNG-A54.webp"
     },
     {
-    "id": 5,
-    "nombre": "SAMSUNG GALAXY A54",
-    "descripcion": "6 GB RAM, Batería 5000 mAh, Resistencia al agua",
-    "precio": 150000,
-    "imagen": "../img/samsung-galaxy-a54.webp"
+    "id":5,
+    "nombre": "SAMSUNG A24",
+    "descripcion": "Memoria RAM: 6 GB, Almacenamiento: 128 GB, Pantalla: 6.5, Tipo De Pantalla: AMOLED, Procesador: Exynos, Sistema Operativo: Android",
+    "precio": 110000,
+    "imagen": "../img/Samsung-A24-1-300x300.webp"
     },
     {
     "id": 6,
-    "nombre": "SAMSUNG Z FLIP 5",
-    "descripcion": "Pantalla Plegable, Procesador Snapdragon 8 Gen 2",
-    "precio": 400000,
-    "imagen": "../img/samsung-z-flip-5.webp"
+    "nombre": "SAMSUNG A14",
+    "descripcion": "Memoria RAM: 4 GB, Almacenamiento: 128 GB, Pantalla: 6.6, Tipo De Pantalla: LED, Procesador: Exynos, Sistema Operativo: Android",
+    "precio": 90000,
+    "imagen": "../img/Samsung-galaxi-a-14.webp"
+    },
+    {
+    "id": 7,
+    "nombre": "SAMSUNG S21-FE",
+    "descripcion": "Pantalla AMOLED de 6.4″. Tiene 3 cámaras traseras de 12Mpx/12Mpx/8Mpx. Cámara delantera de 32Mpx. Procesador Exynos 2100 Octa-Core de 2.9GHz con 6GB de RAM.",
+    "precio": 180000,
+    "imagen": "../img/Samsung-S21-FE-1-300x300.webp"
+    },
+    {
+    "id":8,
+    "nombre":"SAMSUNG Z-FOLD5",
+    "descripcion":"Memoria RAM: 12 GB, Almacenamiento: 256 GB, Pantalla: 6.7, Tipo De Pantalla: AMOLED, Procesador: Snapdragon, Sistema Operativo: Android",
+    "precio":250000,
+    "imagen":"../img/Samsung-Z-Fold5-300x300.webp"
     }
 ]

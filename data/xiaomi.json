@@ -1,23 +1,23 @@
 [
     {
-    "id": 7,
-    "nombre": "XIAOMI 13 PRO",
-    "descripcion": "12 GB RAM, Cámara Leica, Pantalla AMOLED 120 Hz",
-    "precio": 250000,
-    "imagen": "../img/xiaomi-13-pro.webp"
-    },
-    {
-    "id": 8,
-    "nombre": "XIAOMI REDMI NOTE 12",
-    "descripcion": "6 GB RAM, Batería 5000 mAh, Cámara 108 MP",
-    "precio": 120000,
-    "imagen": "../img/xiaomi-redmi-note-12.webp"
-    },
-    {
     "id": 9,
-    "nombre": "XIAOMI POCO X5",
-    "descripcion": "8 GB RAM, Snapdragon 695, Pantalla AMOLED",
+    "nombre": "XIAOMI 13 C",
+    "descripcion": "Pantalla IPS de 6.74″,Tiene 3 cámaras traseras de 50Mpx/2Mpx/0.08Mpx.",
+    "precio": 130000,
+    "imagen": "../img/Xiaomi-13C-01-2-1024x1024.webp"
+    },
+    {
+    "id": 10,
+    "nombre": "XIAOMI 10C",
+    "descripcion": "Pantalla IPS de 6.71″,Tiene 2 cámaras traseras de 50Mpx/2Mpx.",
     "precio": 110000,
-    "imagen": "../img/xiaomi-poco-x5.webp"
+    "imagen": "../img/XIAOMI10C2-1024x1024.webp"
+    },
+    {
+    "id": 11,
+    "nombre": "XIAOMI NOTE 11",
+    "descripcion": "Pantalla AMOLED de 6.81″,Tiene 3 cámaras traseras de 50Mpx/13Mpx/5Mpx,Cámara delantera de 20Mpx.",
+    "precio": 140000,
+    "imagen": "../img/XIAOMI-NOTE-11.webp"
     }
 ]
